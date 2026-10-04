@@ -7,5 +7,6 @@ def check(body):
         raise InputError("body must be an object")
     failed = []
 
-    for key in ("constraint", "metric", "shadow_week", "readout"):\n        if not body.get(key): failed.append(key)
+    for key in ("constraint", "metric", "shadow_week", "readout"):
+        if not body.get(key): failed.append(key)
     return {"passed": not failed, "failed": failed, "applied": False}
